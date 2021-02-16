@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-IIED/eyOkM6ihtOiQsX2zizxFBphgnv1zbe1bKA+njdFzkr6cDNy16jfIKWu4FNH" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <header>
+            <div>
+                <a href="index.html"><img src="img/logo_modified.png" class="logo"/></a>
+                <nav>
+                    <i class="fas fa-bars" onclick="openMenu()"></i>
+                    <ul id="menu_nav">
+                        <li><a href="main-placeholder.html">Ours en peluche</a></li>
+                        <li><a href="index.html">Caméras vintages</a></li>
+                        <li><a href="main-placeholder.html">Meubles en chêne</a></li>
+                    </ul>
+                </nav>
+                <a href="panier.html"><p>Mon panier</p><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+            </div>
+        </header>
+        <main>
+            <div class="sub_title">
+                <i class="fas fa-shopping-cart"></i>
+                <h2>Mon panier</h2>
+            </div>
+            <div class="separation"></div>
+            <div id="panier_content">
+                <div id="table_cart">
+                </div>
+                <div id="panier_summary">
+                    <button onclick="showCloseForm()">Passer commande</button>
+                    <p>TOTAL</p>
+                    <p id="total_price"></p>
+                    <button onclick="showCloseForm()">Passer commande</button>
+                </div>
+            </div>
+            <button id="empty_basket" class="hide" onclick="emptyCart()">Vider le panier</button>
+            <section class="formulaire" id="form_order">
+                <div>
+                    <h4>Merci de remplir le formulaire pour passer commande (tous les champs sont obligatoires)</h4>
+                    <i class="far fa-times" onclick="showCloseForm()"></i>
+
+                    <form id="formOrder">
+                        <label for="pays"></label>
+                        <select name="pays" id="pays" autofocus>
+                            <option value="france">France</option>
+                            <option value="royaume-uni">Royaume-Uni</option>
+                            <option value="allemagne">Allemagne</option>
+                            <option value="italie">Italie</option>
+                            <option value="suisse">Suisse</option>
+                        </select>
+                        <label for="lastname"></label><input class="form-input" type="text" name="lastname" id="lastname" placeholder="Votre nom" required/>
+                        <label for="firstname"></label><input class="form-input" type="text" name="firstname" id="firstname" placeholder="Votre prénom" required/>
+                        <label for="email"></label><input class="form-input" type="email" name="email" id="email" placeholder="Votre e-mail" required/>
+                        <label for="adress"></label><input class="form-input" type="text" name="adress" id="adress" placeholder="Adresse ligne 1" required/>
+                        <label for="postcode"></label><input class="form-input" type="text" name="postcode" id="postcode" placeholder="Code postal" required/>
+                        <label for="city"></label><input class="form-input" type="text" name="city" id="city" placeholder="Ville" required/>
+                        <input type="submit" value="Valider" id="confirmOrder"/>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <section class="footer_infos">
+                <a href="footer-placeholder.html">À propos</a>
+                <ul>
+                    <li><a href="footer-placeholder.html">Qui sommes nous?</a></li>
+                    <li><a href="footer-placeholder.html">Nos engagements</a></li>
+                    <li><a href="footer-placeholder.html">Carte cadeau</a></li>
+                    <li><a href="footer-placeholder.html">Catalogue</a></li>
+                </ul>
+            </section>
+            <section class="footer_infos">
+                <a href="footer-placeholder.html">Orinoco&vous</a>
+                <ul>
+                    <li><a href="footer-placeholder.html">Livraisons et retours</a></li>
+                    <li><a href="footer-placeholder.html">Services et garanties</a></li>
+                    <li><a href="footer-placeholder.html">Nous contacter</a></li>
+                    <li><a href="footer-placeholder.html">CGV</a></li>
+                </ul>
+            </section>
+            <section class="social">
+                <a href="https://www.facebook.com/" target="_blank">
+                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    <p>Facebook</p>
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                    <p>Twitter</p>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <p>Instagram</p>
+                </a>
+            </section>
+        </footer>
+        <script type="text/javascript" src="js/panier.js"></script>
+        <script type="text/javascript" src="js/utils.js"></script>
+        <script type="text/javascript" src="js/appearance_controls.js"></script>
+    </body>
+</html>
