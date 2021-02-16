@@ -3,27 +3,40 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-IIED/eyOkM6ihtOiQsX2zizxFBphgnv1zbe1bKA+njdFzkr6cDNy16jfIKWu4FNH" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         <header>
-            <div>
-                <a href="index.html"><img src="img/logo_modified.png" class="logo"/></a>
-                <nav>
-                    <i class="fas fa-bars" onclick="openMenu()"></i>
-                    <ul id="menu_nav">
+          
+                <nav>    
+                    <div class="nav__logo">
+                        <a href="index.html">Orinico</a>
+
+
+                    </div>         
+
+                    
+                    <ul class="nav__menu">
                         <li><a href="main-placeholder.html">Ours en peluche</a></li>
                         <li><a href="index.html">Caméras vintages</a></li>
                         <li><a href="main-placeholder.html">Meubles en chêne</a></li>
                     </ul>
+
+                    <div class="nav__panier">
+
+                        <a href="panier.html"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+
+
+                    </div>
+
                 </nav>
-                <a href="panier.html"><p>Mon panier</p><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
-            </div>
+           
         </header>
         
         <main>
-            <h1>Bienvenue sur Orinoco</h1>
+            
             <h2>Caméras vintage</h2>
             <div class="separation"></div>
             <section id="liste">
@@ -48,7 +61,7 @@
                     <li><a href="footer-placeholder.html">CGV</a></li>
                 </ul>
             </section>
-            <section class="social">
+            <section class="footer__social">
                 <a href="https://www.facebook.com/" target="_blank">
                     <i class="fab fa-facebook-f" aria-hidden="true"></i>
                     <p>Facebook</p>
