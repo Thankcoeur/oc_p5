@@ -45,10 +45,12 @@
 
         let product__prix  = document.createElement('div')
         product__prix.classList.add("product__prix")
-        product__prix.innerText = element.price
+        product__prix.innerText = element.price +" €"
         product.append(product__image,product__name,product__description,product__prix)
         return product
 }
+
+
 
 
 

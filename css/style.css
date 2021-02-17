@@ -4,6 +4,35 @@ width: 300px;
 
 
 }
+.panier_item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+    align-items: center;
+    justify-items: center;
+}
+
+.panier_moins {
+
+    color : white;
+    background-color: orange;
+    border: 10px;
+    text-align: center;
+    width: 10px;
+    cursor: pointer;
+
+}
+
+
+.btn_voir_plus {
+    padding: 10px;
+    border-radius: 10px;
+
+    background-color: orangered;
+    color: white;
+    width: 110px;
+    display: block;
+    text-align: center;
+}
 
 .container-product {
     padding: 10px;
@@ -13,7 +42,7 @@ width: 300px;
     align-items: center;
 }
 
-#liste div  {
+#liste > div  {
     padding: 10px;
 
     display: grid;
