@@ -3,26 +3,53 @@ import {LocalStorage} from "./LocalStorage.js"
 
 var localS = new LocalStorage()
 
-let element = JSON.parse(window.localStorage.getItem("element"))
+let id = window.localStorage.getItem("ref_id")
+
+console.log(id)
+
+getPromise('GET',"http://localhost:3000/api/cameras/"+id).then((oneProduct) => {
+
+  
+displayOneProduct(oneProduct)
 
 
 
-   let product = getProduct(element)
-   document.getElementsByClassName("product")[0].append(product)
-
-function ajouter_panier (element) {
-
-localStorage.setItem("pannier",JSON.stringify(element))
-
-    
-}
-document.getElementsByClassName('ajouter_panier')[0].addEventListener('click',()=> {
-
-   localS.ajouter_item(element)
 })
 
+   function displayOneProduct(element) {
+
+      let product = getProduct(element)
+      document.getElementById("vue").append(product)
+
+     var selectList =  document.createElement("select")
+     selectList.setAttribute('name',"option")
+     selectList.id ="option"
 
 
+     element.lenses.map( e => {
+      var option =  document.createElement('option')
+
+      option.setAttribute("value",e)
+      option.innerText =  e
+
+      selectList.append(option)
+
+
+     })
+      product.append(selectList)
+   
+   
+   document.getElementById('ajouter__panier').addEventListener('click',()=> {
+   
+      localS.AddItem(id)
+   })
+   
+   
+   
+
+
+
+   }
 
 
 

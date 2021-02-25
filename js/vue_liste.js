@@ -1,35 +1,42 @@
 import { getPromise, getProduct } from "./utils.js"
 
 
-getPromise('http://localhost:3000/api/cameras').then((res) => {
+getPromise('GET','http://localhost:3000/api/cameras').then((AllProducts) => {
 
-    displayCameras(res)
-    console.log(res)
+    displayCameras(AllProducts)
+    
 
 
 
 
 })
 
-const listeVue = document.getElementById('liste');
+const listeVue = document.getElementById('vue');
 const content = document.createElement("div")
-function displayCameras(products) {
-    console.log(typeof products)
-    products.forEach(element => {
+content.classList.add("row")
+
+
+function displayCameras(AllProducts) {
+    
+    AllProducts.forEach(element => {
 
         var product = getProduct(element)
+        
         var btn = document.createElement("div")
         btn.innerText = "voir plus"
 
         btn.onclick = function storeData() {
-            window.localStorage.setItem('element', JSON.stringify(element))
+            window.localStorage.setItem('ref_id', element._id)
             window.open("page_produit.html", "_self");
         };
 
         btn.classList.add("btn_voir_plus")
         product.append(btn)
-
-        content.append(product)
+        let div = document.createElement("div")
+        div.classList.add("col-md-4")
+        div.classList.add("col-sm-12")
+        div.append(product)
+        content.append(div)
 
 
 

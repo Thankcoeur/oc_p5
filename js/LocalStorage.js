@@ -1,139 +1,81 @@
 class LocalStorage {
 
-    constructor() {
-
-    }
-
-    existe_dans_table(id,table) {
-        var  result= false
-        table.forEach(element => {
-            console.log(element._id  +" : " + id)
-            if (element._id == id) {
-        
-                result = true
-            }
-            
-        });
-        
-        return result
-        
     
 
+  /**
+   * ajoute un produit dans le local storage
+   * @param {number} id  identifiant du produit
+   */
+   AddItem(id) {
 
+   var data =  this.recupererData()
+   var index = this.getIndex(id)
+   console.log(index)
+    if(index < 0) {
+        
+
+        data.push(id) 
+        this.updateData(data)
     }
 
-    retourneElement(id,table) {
-        var  result= null
-        table.forEach(element => {
-            console.log(element._id  +" : " + id)
-            if (element._id == id) {
-        
-                result = element
-            }
-            
-        });
-        
-        return result
-        
+
+   
+
+
+
+   }
+
+  /**
+   * suprimer un element du local storage avec un id
+   * @param {number} id  identifiant de l'element à suprimer 
+   * 
+   */
+   removeItem(id) {
+
+    var data = this.recupererData()
+
+    data.splice(this.getIndex(id),1)
+
+    this.updateData(data)
+
+
+
+   }
+
+   /**
+    * permet de conaitre si le produit ayant cette identifiant existe
+    * dans le local storage
+    * envoie -1 si rien n' es trouvé 
+    * ou l'index de l' objet
+    * @param {number} id id à inserer 
+    */
+
+   getIndex(id) {
+
+    var data = this.recupererData()
+    console.log(id)
+     var index = data.findIndex( e =>   e.id === id  )
+     
+    return index
+
+   }
+
+   
+
+   
+
     
 
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ajouter_item(item) {
+   
+/**
+ * recupere les données du local storage sous forme de tableau
+ * @return  {Array}
+ */
+    recupererData() {
         
-       var  data  = this.recupererData('panier')
+      if (window.localStorage.getItem('panier') == null && !Array.isArray( JSON.parse(window.localStorage.getItem('panier')))) {
 
-      
-       if (this.existe_dans_table(item._id,data)) {
-           
-           item.qt = item.qt +1
-            data.splice(data.indexOf(item),1,item)
-            console.log(data)
-            
-
-
-       }
-
-       else {
-           item.qt = 1
-           data.push(item)
-
-
-       
-       }
-
-         this.envoyerData(data)
-
-    }
-
-    moins(element) {
-
-       var  data = this.recupererData()
-       element.qt = element.qt -1 
-        if (element.qt <1) {
-           if( confirm("ete vous sur de suprimer cette article  ?") ) 
-           {
-
-            data.splice(data.indexOf(element),1)
-            
-           }
-           else {
-
-            
-           }
-
-        
-
-        }
-        else {
-
-            
-            data.splice(data.indexOf(element),1,element)
-
-        }
-        
-
-        this.envoyerData(data)
-        
-
-
-    }
-
-    plus(element) {
-        var  data = this.recupererData()
-        if (element.qt <1) {
-
-            element.qt = 0
-
-        }
-        element.qt = element.qt + 1
-        data.splice(data.indexOf(element),1,element)
-
-        this.envoyerData(data)
-
-
-
-
-    }
-
-    recupererData(nomTable) {
-        
-      if (window.localStorage.getItem(nomTable) == null && !Array.isArray( JSON.parse(window.localStorage.getItem('panier')))) {
-
-        window.localStorage.setItem(nomTable,"[]")
+        window.localStorage.setItem('panier',"[]")
         
         
       }
@@ -145,9 +87,14 @@ class LocalStorage {
 
     }
 
-    envoyerData(tab) {
+    /**
+     * met a jour le localstorage avec le tableau envoyé en parametre
+     * @param {Array} data 
+     */
 
-        var str = JSON.stringify(tab)
+    updateData(data) {
+
+        var str = JSON.stringify(data)
         
         
         window.localStorage.setItem('panier', str)

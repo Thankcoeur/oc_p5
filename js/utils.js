@@ -1,37 +1,55 @@
 
-
-  export function getPromise(url) {
+/**
+ * fonction qui envoie des requete au serveur et revoie une promise
+ * @param {string} method get ou post
+ * @param  {url} url url de la requete  
+ * @param {object} data  donnée a envoyer en cas de requete post
+ */
+  export function getPromise(method,url,data) {
 
   return new Promise(function (resolve,reject) {
     
     var req = new XMLHttpRequest()
-  req.open('GET', url, true)
+  req.open(method, url, true)
   req.onreadystatechange = function () {
     if (req.readyState == 4) {
-       if(req.status == 200) {
+       if(req.status == 201 || req.status == 200) {
         resolve(JSON.parse(req.responseText))
 
        }
         
        else
          {
-            reject('error')
+            reject()
          }
     }
   };
-  req.send(null)
+  if(method == 'POST'){
+    req.setRequestHeader("Content-Type", "application/json");
+    console.log(data)
+       req.send(JSON.stringify(data));
+}else{
+    req.send();
+}
+  
     
  })
 
     
 }
 
-
+/**
+ * prend un produit est cree des element pour le dom
+ * @param {} element produit a contruire dans le dom
+ */
   export function getProduct(element) {
 
 
   let product = document.createElement("section")
-        product.classList.add("produit")
+        product.classList.add("product")
+        product.classList.add("d-flex")
+        product.classList.add("align-items-center")
+        product.classList.add("flex-column")
         let product__image = document.createElement('img')
         product__image.classList.add("product__image")
         product__image.setAttribute("src",element.imageUrl)
