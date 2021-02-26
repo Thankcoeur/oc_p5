@@ -2,7 +2,7 @@ import { getPromise, getProduct } from "./utils.js"
 
 
 getPromise('GET','http://localhost:3000/api/cameras').then((AllProducts) => {
-
+    
     displayCameras(AllProducts)
     
 

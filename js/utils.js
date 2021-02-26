@@ -13,7 +13,9 @@
   req.open(method, url, true)
   req.onreadystatechange = function () {
     if (req.readyState == 4) {
+    
        if(req.status == 201 || req.status == 200) {
+         console.log(req.responseText)
         resolve(JSON.parse(req.responseText))
 
        }
@@ -28,8 +30,11 @@
     req.setRequestHeader("Content-Type", "application/json");
     console.log(data)
        req.send(JSON.stringify(data));
-}else{
-    req.send();
+       
+}
+else {
+
+  req.send()
 }
   
     

@@ -48,6 +48,46 @@ var tbody = document.getElementsByTagName("tbody")[0]
    }
 
 
+   document.getElementById('form').addEventListener('submit', function(e){
+    e.preventDefault();
+    sendData();
+})
+
+   function sendData() {
+    let formData = document.getElementsByClassName("form__input");
+    
+    let contact = {
+        firstName : formData[0].value,
+        lastName : formData[1].value,
+        
+        email : formData[2].value,
+        tel: formData[3].value,
+        address :formData[4].value,
+        city : formData[5].value,
+    }
+
+    let products = ls.recupererData()
+
+
+    let data  =  {contact,products}
+    console.log(data)
+
+    getPromise("POST",'http://localhost:3000/api/cameras/order',data).then( (res) => {
+
+    var orderId = res.orderId
+    localStorage.setItem("totalAmount", prix);
+        localStorage.setItem("orderId", orderId);
+        window.open("confirmation_de_commande.html");
+    })
+
+
+
+
+
+
+   }
+
+
    
    
 
