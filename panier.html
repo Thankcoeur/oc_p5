@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 
@@ -12,9 +12,8 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-
+  <link rel="stylesheet" href="./css/style.css">
 
   <!-- Custom styles for this template -->
   <link href="css/shop-homepage.css" rel="stylesheet">
@@ -24,149 +23,146 @@
 <body>
 
   <div class="body">
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="/">Orinico</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">Orinico</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
       </div>
+      <a href="/panier.html"><i class="fas fa-shopping-bag"></i></a>
+  
+    </nav>
+    
+    <main>
+      
+      <table class="table">
 
+
+        <thead>
+    
+            
+          <th scope="col">name</th>
+          
+          <th scope="col">prix</th>
+          
+        </thead>
+    
+        <tbody>
+    
+    
+    
+            
+        </tbody>
+    
+        <tfoot>
+            <tr>
+                <th scope="row">Totals</th>
+                <td id="prix_total"></td>
+            </tr>
+    </table>
+    
+
+    <div class="container d-flex align-item-center justify-content-center">
+      <form id="form">
+        <div class="form-group row">
+          <label for="nom" class="col-4 col-form-label">Nom</label> 
+          <div class="col-8">
+            <input id="nom" class="form__input" name="nom" placeholder="votre nom" type="text" class="form-control" required="required">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="prenom" class="col-4 col-form-label">Prenom</label> 
+          <div class="col-8">
+            <input id="prenom" class="form__input" name="prenom" placeholder="votre prenom" type="text" required="required" class="form-control">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email" class="col-4 col-form-label">email</label> 
+          <div class="col-8">
+            <input id="email" class="form__input" name="email" placeholder="votre adresse mail" type="text" required="required" class="form-control">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="tel" class="col-4 col-form-label">tel</label> 
+          <div class="col-8">
+            <input id="tel" class="form__input"  name="tel" placeholder="votre numero de telephone portable ou fixe" type="text" class="form-control" required="required">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="adresse" class="col-4 col-form-label">Adresse</label> 
+          <div class="col-8">
+            <input id="adresse" class="form__input" name="adresse" placeholder="votre adresse" type="text" class="form-control" required="required">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="ville" class="col-4 col-form-label">Ville</label> 
+          <div class="col-8">
+            <input id="ville" class="form__input" name="ville" placeholder="nom de la ville + code postal" type="text" class="form-control" required="required">
+          </div>
+        </div> 
+        <div class="form-group row">
+          <div class="offset-4 col-8">
+            <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
     </div>
-    <a href="/panier.html"><i class="fas fa-shopping-bag"></i></a>
+    
+      
+        </main>
+          <div class="footer">
 
-  </nav>
+    <footer class="py-5 bg-dark">
+          <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+          </div>
+         
+        </footer>
 
-  <!-- Page Content -->
-  <main>
-
-
-<table class="table">
-
-
-    <thead>
+          </div>
 
         
-      <th scope="col">name</th>
-      
-      <th scope="col">prix</th>
-      
-    </thead>
-
-    <tbody>
 
 
-
-        
-    </tbody>
-
-    <tfoot>
-        <tr>
-            <th scope="row">Totals</th>
-            <td id="prix_total"></td>
-        </tr>
-</table>
-
-</div>
-  </main>
- 
-
-<div class="row">
+  </div>
+    
+    
 
 
-
-
-
-
-
-</div>
-
-
-
-
-
-<div class="container d-flex align-item-center justify-content-center">
-  <form id="form">
-    <div class="form-group row">
-      <label for="nom" class="col-4 col-form-label">Nom</label> 
-      <div class="col-8">
-        <input id="nom" class="form__input" name="nom" placeholder="votre nom" type="text" class="form-control" required="required">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="prenom" class="col-4 col-form-label">Prenom</label> 
-      <div class="col-8">
-        <input id="prenom" class="form__input" name="prenom" placeholder="votre prenom" type="text" required="required" class="form-control">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="email" class="col-4 col-form-label">email</label> 
-      <div class="col-8">
-        <input id="email" class="form__input" name="email" placeholder="votre adresse mail" type="text" required="required" class="form-control">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="tel" class="col-4 col-form-label">tel</label> 
-      <div class="col-8">
-        <input id="tel" class="form__input"  name="tel" placeholder="votre numero de telephone portable ou fixe" type="text" class="form-control" required="required">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="adresse" class="col-4 col-form-label">Adresse</label> 
-      <div class="col-8">
-        <input id="adresse" class="form__input" name="adresse" placeholder="votre adresse" type="text" class="form-control" required="required">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="ville" class="col-4 col-form-label">Ville</label> 
-      <div class="col-8">
-        <input id="ville" class="form__input" name="ville" placeholder="nom de la ville + code postal" type="text" class="form-control" required="required">
-      </div>
-    </div> 
-    <div class="form-group row">
-      <div class="offset-4 col-8">
-        <button name="submit" type="submit" class="btn btn-primary">Submit</button>
-      </div>
-    </div>
-  </form>
-</div>
+  
 
  
-<div class="footer">
-
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
-    </div>
-   
-  </footer>
+  
+ 
 
 
 
- </div>
 
-</div>
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+ 
+
+ 
+
   <script type="module" src="./js/panier.js"></script>
 
 </body>
