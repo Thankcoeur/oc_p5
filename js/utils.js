@@ -54,6 +54,7 @@ else {
         product.classList.add("product")
         product.classList.add("d-flex")
         product.classList.add("align-items-center")
+        product.classList.add("justify-content-center")
         product.classList.add("flex-column")
         let product__image = document.createElement('img')
         product__image.classList.add("product__image")

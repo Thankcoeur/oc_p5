@@ -1,8 +1,59 @@
 
 
+footer {
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+ 
+
+ 
+ 
+    
+    
+}
+
+.footer {
+    padding-top: 200px;
+}
 
 
 
+.body {
+
+   position: relative;
+    min-height: 100vh;
+}
+body , html {
+
+    min-height: 100vh;
+    
+}
+
+
+
+
+
+.btn-panier  {
+background-color : rgb(27, 11, 102);
+width: 100px;
+margin-top: 50px;
+color: white;
+border-radius: 20px;
+
+
+}
+
+form {
+    width: 600px;
+    
+}
+
+.texte-panier {
+
+    margin-left: 10px;
+}
 
 
 .panier_moins {
@@ -30,10 +81,7 @@
     cursor: pointer;
 }
 
-body {
 
-    background-color: rgb(240, 240, 240);
-}
 
 
 
@@ -64,7 +112,7 @@ body {
 
 .product  {
     background-color: white;
-    
+    max-width: 400px;
     padding: 10px; 
     margin: 10px ;
     border-radius: 10px;
@@ -72,13 +120,32 @@ body {
     box-shadow: 0px 0px 10px 1px black;
 }
 
-main {
+#vue {
+    
 
-    margin-top: 100px;
+    padding: 50px;
+}
+
+main {
+    
+   
+
+   
+   
+  
+  
+
+
+    
 }
 
 footer {
+    position: absolute;
+   
+    bottom: 0px;
+    left : 0px;
     padding: 10px;
+    width: 100%;
     background: rgb(99,9,121);
     background: linear-gradient(90deg, rgb(29, 21, 97) 22%, rgb(47, 10, 78) 100%);
 
