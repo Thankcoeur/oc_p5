@@ -54,7 +54,9 @@ class LocalStorage {
 
     var data = this.recupererData()
     console.log(id)
-     var index = data.findIndex( e =>   e.id === id  )
+    
+     var index = data.findIndex( id1  =>id1 == id)
+    
      
     return index
 
