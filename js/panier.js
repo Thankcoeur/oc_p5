@@ -107,6 +107,10 @@ document.getElementById('form').addEventListener('submit', function (e) {
   sendData();
 })
 
+/**
+ * Envoie les produits commandés et les information de contact
+ */
+
 function sendData() {
   let formData = document.getElementsByClassName("form__input");
 
@@ -119,6 +123,8 @@ function sendData() {
     address: formData[4].value,
     city: formData[5].value,
   }
+
+ 
 
   let products = ls.recupererData()
 
@@ -133,6 +139,13 @@ function sendData() {
     localStorage.setItem("orderId", orderId);
     window.open("confirmation_de_commande.html");
   })
+ 
+
+var b = t.type = {
+
+
+
+}
 
 
 }
