@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    
+    "outDir": "./public/js",
+    "noImplicitAny": true,
+    "module": "esnext",
+    "moduleResolution":"node",
+    "target": "es2017",
+    "jsx": "react",
+    "allowJs": true
+  }
+}

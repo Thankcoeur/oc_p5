@@ -1,24 +1,36 @@
-import { getPromise, getProduct } from "./utils.js"
-
-
-getPromise('GET','http://localhost:3000/api/cameras').then((AllProducts) => {
-    
-    displayCameras(AllProducts)
-    
+import {  getProduct,getAllData } from "./utils"
 
 
 
 
-})
+(async () => {
+try {
+
+const data =  await getAllData()
+displayCameras(data)
+
+}
+catch(e) {
+
+    alert(e)
+}
+
+
+})()
+
+
+ 
+
+ 
 
 const listeVue = document.getElementById('vue');
 const content = document.createElement("div")
 content.classList.add("row")
 
 
-function displayCameras(AllProducts) {
+function displayCameras(AllProducts : any) {
     
-    AllProducts.forEach(element => {
+    AllProducts.forEach((element : any) => {
 
         var product = getProduct(element)
         
@@ -50,6 +62,8 @@ function displayCameras(AllProducts) {
 
 
 }
+
+
 
 
 

@@ -1,5 +1,5 @@
  
- var total =  window.localStorage.getItem('totalAmount') 
+ var total : string =  window.localStorage.getItem('totalAmount') 
  var id_commmande = window.localStorage.getItem('orderId')
  window.localStorage.clear()
 

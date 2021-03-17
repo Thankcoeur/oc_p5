@@ -1,57 +1,28 @@
-
-import { LocalStorage } from "./LocalStorage.js"
-import { getPromise, getProduct } from "./utils.js";
+import { LocalStorage } from "./LocalStorage"
+import {  getProduct, PostForm } from "./utils";
 
 var ls = new LocalStorage()
 var tbody = document.getElementsByTagName("tbody")[0]
- var prix = 0;
+var prix  : number = 0;
 
 function render () {
   tbody.innerHTML =""
-  
   prix = 0 
   var panier = ls.recupererData()
  
-
-
-
-
   document.getElementById("prix_total").innerText = prix + " €"
 
-
-
-
   panier.forEach(element => {
-
-
     getPromise('GET', "http://localhost:3000/api/cameras/" + element).then((oneProduct) => {
-  
-  
       displaypanier_product(oneProduct)
       console.log(prix + "ici")
       document.getElementById("prix_total").innerText = prix + " €"
-  
-  
-  
     })
-
     document.getElementById("prix_total").innerText = prix + " €"
-  
-  
   });
-
-
-
-
-
 }
   
-  
-  
-
-  
-  
-  function displaypanier_product(product) {
+  function displaypanier_product(product :any) {
   
     var tr = document.createElement('tr')
     tr.setAttribute("data-id",product._id)
@@ -68,8 +39,8 @@ function render () {
   
   btn.addEventListener("click" ,() => {
     
-  var e = document.querySelectorAll('[data-id="' + product._id+'"]')[0];
-  ls.removeItem(e._id)
+  var e :any  = document.querySelectorAll('[data-id="' + product._id+'"]')[0];
+  ls.removeItem(product._id,ls.recupererData())
   console.log(prix)
     e.remove()
   
@@ -82,25 +53,12 @@ function render () {
     tr.append(name, prixelement,btn)
   
     tbody.append(tr)
-  
-  
-  
-  
-
-
-
-
-
-
-
 }
 
 
 
 
 render()
-
-
 
 document.getElementById('form').addEventListener('submit', function (e) {
   e.preventDefault();
@@ -112,7 +70,7 @@ document.getElementById('form').addEventListener('submit', function (e) {
  */
 
 function sendData() {
-  let formData = document.getElementsByClassName("form__input");
+  let formData :any = document.getElementsByClassName("form__input");
 
   let contact = {
     firstName: formData[0].value,
@@ -124,28 +82,24 @@ function sendData() {
     city: formData[5].value,
   }
 
- 
-
   let products = ls.recupererData()
+  let data = { contact, products };
+  
+
+  (async () => {
+
+    var post = await PostForm(data)
+    window.localStorage.setItem('orderId',post.orderId)
+    window.localStorage.setItem('totalAmount',prix.toString())
+    window.open("confirmation_de_commande.html")
 
 
-  let data = { contact, products }
-  console.log(data)
 
-  getPromise("POST", 'http://localhost:3000/api/cameras/order', data).then((res) => {
+  })()
 
-    var orderId = res.orderId
-    localStorage.setItem("totalAmount", prix);
-    localStorage.setItem("orderId", orderId);
-    window.open("confirmation_de_commande.html");
-  })
+  
  
 
-var b = t.type = {
-
-
-
-}
 
 
 }

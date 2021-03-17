@@ -1,0 +1,1 @@
+(()=>{var e=window.localStorage.getItem("totalAmount"),o=window.localStorage.getItem("orderId");window.localStorage.clear(),document.getElementById("confirmation").innerText="merci de votre commande num : "+o+" d' un montant de : "+e+" €"})();
