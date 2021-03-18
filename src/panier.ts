@@ -1,15 +1,17 @@
-import { LocalStorage } from "./LocalStorage"
+import { ProductStorage } from "./ProductStorage"
 import {  getIdData, getProduct, PostForm } from "./utils";
+import { Factory } from './Factory';
 
-var ls = new LocalStorage()
+var productf = Factory.getProductStorage() 
+var localS = Factory.getLocalStorage()
 var tbody = document.getElementsByTagName("tbody")[0]
 var prix  : number = 0;
 
 function render () {
   tbody.innerHTML =""
   prix = 0 
-  var panier = ls.recupererData()
- 
+  
+ var panier :any = Factory.getLocalStorage().data
   document.getElementById("prix_total").innerText = prix + " €"
 
   panier.forEach((element : string )  => {
@@ -22,7 +24,7 @@ function render () {
     })()
     document.getElementById("prix_total").innerText = prix + " €"
 
-
+     localS.data = productf.removeItem(element,localS.data)
 
     
   });
@@ -36,13 +38,13 @@ function render () {
     var prixelement = document.createElement('td')
     prixelement.innerText = product.price + " €"
     var btn  = document.createElement("td")
-    btn.innerHTML = "<btn>remove</btn>"
+    btn.innerHTML = '<i class="fas fa-trash"></i>'
     btn.addEventListener("click" ,() => {
     
   var e :any  = document.querySelectorAll('[data-id="' + product._id+'"]')[0];
-  ls.removeItem(product._id,ls.recupererData())
-  console.log(prix)
-    e.remove()
+  
+  
+    
   
   render()
   
@@ -82,8 +84,8 @@ function sendData() {
     city: formData[5].value,
   }
 
-  let products = ls.recupererData()
-  let data = { contact, products };
+
+  let data = { contact };
   
 
   (async () => {

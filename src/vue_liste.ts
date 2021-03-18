@@ -1,6 +1,11 @@
 import {  getProduct,getAllData } from "./utils"
 
+import { LocalStorage } from './LocalStorage';
+import { ProductStorage } from "./ProductStorage";
 
+ var a = new LocalStorage();
+
+var ProductStrorage_ =  new ProductStorage();
 
 
 (async () => {

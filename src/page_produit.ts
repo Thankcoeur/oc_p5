@@ -1,8 +1,8 @@
 import {  getProduct, getIdData } from "./utils"
-import { LocalStorage } from "./LocalStorage"
+import { Factory } from './Factory';
 
 
-var localS = new LocalStorage();
+
 
 var id = window.localStorage.getItem("ref_id");
 
@@ -14,7 +14,7 @@ var id = window.localStorage.getItem("ref_id");
    try {
 
        var data  = await getIdData(id)
-   displayOneProduct(data,localS.recupererData())
+   displayOneProduct(data,Factory.getLocalStorage().data)
    }catch (e) {
 
       alert(e)
@@ -49,8 +49,12 @@ function displayOneProduct(element: any, data: Array<Object>): void {
 
 
    document.getElementById('ajouter__panier').addEventListener('click', () => {
+     let locals =  Factory.getLocalStorage()
+     let productf = Factory.getProductStorage()
 
-      localS.AddItem(id, data)
+     locals.data =  productf.AddItem(id,locals.data)
+
+     
       alert('enregistré dans le panier')
 
    })
