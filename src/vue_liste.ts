@@ -25,7 +25,8 @@ catch(e) {
 
 const listeVue = document.getElementById('vue');
 const content = document.createElement("div")
-content.classList.add("row")
+content.classList.add("list-vue")
+
 
 
 function displayCameras(AllProducts : any) {
@@ -42,11 +43,11 @@ function displayCameras(AllProducts : any) {
             window.open("page_produit.html", "_self");
         };
 
-        btn.classList.add("btn_voir_plus")
+        btn.classList.add("btn-voir-plus")
         product.append(btn)
         let div = document.createElement("div")
-        div.classList.add("col-md-4")
-        div.classList.add("col-sm-12")
+        
+        
         div.append(product)
         content.append(div)
 

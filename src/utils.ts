@@ -10,15 +10,7 @@ export function getProduct(element : any)
     
     let product = document.createElement("section")
 
-    product.classList.add("product")
-
-    product.classList.add("d-flex")
-
-    product.classList.add("align-items-center")
-
-    product.classList.add("justify-content-center")
-
-    product.classList.add("flex-column")
+    product.classList.add('product')
 
     let product__image = document.createElement('img')
     

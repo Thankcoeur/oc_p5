@@ -1,5 +1,5 @@
 import { LocalStorage } from "./LocalStorage"
-import {  getProduct, PostForm } from "./utils";
+import {  getIdData, getProduct, PostForm } from "./utils";
 
 var ls = new LocalStorage()
 var tbody = document.getElementsByTagName("tbody")[0]
@@ -12,32 +12,32 @@ function render () {
  
   document.getElementById("prix_total").innerText = prix + " €"
 
-  panier.forEach(element => {
-    getPromise('GET', "http://localhost:3000/api/cameras/" + element).then((oneProduct) => {
+  panier.forEach((element : string )  => {
+
+    (async () => {
+      let oneProduct = await getIdData(element)
       displaypanier_product(oneProduct)
-      console.log(prix + "ici")
       document.getElementById("prix_total").innerText = prix + " €"
-    })
+
+    })()
     document.getElementById("prix_total").innerText = prix + " €"
+
+
+
+    
   });
 }
   
   function displaypanier_product(product :any) {
-  
     var tr = document.createElement('tr')
     tr.setAttribute("data-id",product._id)
-  
-  
     var name = document.createElement('td')
     name.innerText = product.name
     var prixelement = document.createElement('td')
     prixelement.innerText = product.price + " €"
-  
     var btn  = document.createElement("td")
-  
     btn.innerHTML = "<btn>remove</btn>"
-  
-  btn.addEventListener("click" ,() => {
+    btn.addEventListener("click" ,() => {
     
   var e :any  = document.querySelectorAll('[data-id="' + product._id+'"]')[0];
   ls.removeItem(product._id,ls.recupererData())
