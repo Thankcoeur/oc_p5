@@ -1,5 +1,12 @@
 class ProductStorage {
-  
+
+
+/**
+ * ajoute un item au tableau en parametre
+ * @param id 
+ * @param data 
+ * @returns 
+ */  
   AddItem(id: string,data : Array<Object>) : Array<Object> {
     let data_ = [...data]
     data_.push(id)

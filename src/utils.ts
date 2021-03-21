@@ -41,6 +41,12 @@ export function getProduct(element : any)
   }
 
 
+
+  /**
+   * envoye la commande au serveur et retourne le num de commande + la commande
+   * @data les donnée du client adresse nom mail etc
+   * @url  url du serveur ou envoyer les informations
+   */
    export const PostForm = async (data : any,url : any = 'http://localhost:3000/api/cameras/order') => {
 
     const  response = await fetch(url,{
@@ -60,7 +66,10 @@ export function getProduct(element : any)
   }
 
 
- 
+ /**
+  * recupere les donnée en format json des cameras
+  * @url url du serveur ou envoyer les informations
+  */
    export const getAllData =  async  ( url:string  = 'http://localhost:3000/api/cameras' ) => {
   
     let response = await fetch(url)
@@ -71,6 +80,10 @@ export function getProduct(element : any)
     
     }
 
+     /**
+  * recupere les données d' une camera en fonction de son id 
+  * @url {string} url du serveur ou envoyer les informations
+  */
    export const getIdData = async (id :string) => {
       let response = await fetch('http://localhost:3000/api/cameras/'+id)
     let data = await response.json()
@@ -89,19 +102,7 @@ export function getProduct(element : any)
 
 
 
-export function verifierObjectData(data : any) : boolean {
 
-  if( data._id !== undefined &&
-    data.name !== undefined &&
-    data.price !== undefined && 
-    data.description !== undefined &&
-    data.imageUrl !== undefined) {
-      return true
-    }
-    else return false
-
-
-}
 
 
 

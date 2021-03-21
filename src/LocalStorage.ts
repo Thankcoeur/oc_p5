@@ -1,4 +1,8 @@
+/**
+ * decorateur qui permet de modifier le getter et le setter de la proprieté
+ */
 function observe() {
+
 
 return function(target : any , descriptor : any) {
     let data : any  = null
@@ -41,12 +45,18 @@ constructor() {
 
 }
 
+/**
+ * recupere les données du localstorage
+ */
  static recupererData() {
  return JSON.parse(window.localStorage.getItem("panier"))
 
 
 }
-
+/**
+ * enregistre les données dans le localStorage
+ * @param data données a enregistrer dans le localStorage
+ */
 static enregistrer(data :any) {
   window.localStorage.setItem('panier',JSON.stringify(data))
 

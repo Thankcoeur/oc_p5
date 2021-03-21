@@ -6,60 +6,15 @@
     color: rgb(88, 88, 88);
    
 }
-.nav {
-    padding: 30px;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
-    justify-items: center;
-    font-family: 'Roboto',"sans-serif" ;
-    
-}
-
-.nav .nav__links {
-    padding: 0 ;
-    margin: 0;
-    text-decoration: none;
-    list-style: none;
-    
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 
 
 
-}
-.nav__link {
-    font-size: 16px;
-    text-decoration: none;
-    color: black;
-
-    padding: 0px 20px;
-}
-.nav__logo {
-    font-size: 24px;
-}
-.nav__link a {
-    text-decoration: none;
-    color: black;
-    width: 100px;
-}
-.nav__link a:hover {
-
-    border-bottom: 2px solid var(--main-color);
-}
-
-.nav .panier {
-
-    color: var(--main-color)
-}
 
 .product {
     padding: 40px;
 
     max-width: 900px;
-    margin-bottom: 50px;
+   
     
 }
 
@@ -68,17 +23,15 @@
     width: 100%;
 }
 
-.list-vue {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
+
 
 
 
 .btn-voir-plus {
-    width: 100px;
+    width: 80px;
     border-radius: 20px;
     text-align: center;
+    font-size: 12px;
     padding: 8px;
     box-shadow: 0px 0px 5px 0spx black;
     margin-top: 5px;
