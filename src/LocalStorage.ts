@@ -49,7 +49,12 @@ constructor() {
  * recupere les données du localstorage
  */
  static recupererData() {
- return JSON.parse(window.localStorage.getItem("panier"))
+     let data =JSON.parse(window.localStorage.getItem("panier"))
+
+if(data === null) {
+    data = []
+}
+return data
 
 
 }

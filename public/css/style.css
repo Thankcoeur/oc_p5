@@ -28,6 +28,7 @@
 
 
 .btn-voir-plus {
+    cursor: pointer;
     width: 80px;
     border-radius: 20px;
     text-align: center;
