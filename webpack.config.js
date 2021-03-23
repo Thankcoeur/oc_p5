@@ -15,6 +15,7 @@ function returnjs() {
 
 }
 module.exports = {
+  devtool :'eval-source-map',
   entry: returnjs(),
   module: {
     rules: [

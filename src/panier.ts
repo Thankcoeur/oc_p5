@@ -39,6 +39,8 @@ function displaypanier_product(product: any) {
     var e: any = document.querySelectorAll(
       '[data-id="' + product._id + '"]'
     )[0];
+    e.remove()
+    localS.data  =  productf.removeItem(product._id,localS.data)
 
     render();
   });

@@ -25,14 +25,23 @@ margin-bottom: 40px;
         grid-template-columns: 1fr;
     }
 }
+#ajouter__panier {
+
+    background-color: blueviolet;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 10px;
+}
 
 
 
 
 .product {
     padding: 40px;
-
-    max-width: 900px;
+    margin: 20px;
+	box-shadow: 0 0 20px #dddddd ;
+        max-width: 900px;
    
     
 }
