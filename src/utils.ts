@@ -48,7 +48,7 @@ export function getProduct(element : any)
    * @url  url du serveur ou envoyer les informations
    */
    export const PostForm = async (data : any,url : any = 'http://localhost:3000/api/cameras/order') => {
-
+  console.log("data",data)
     const  response = await fetch(url,{
       method : 'POST',
       headers : {
@@ -58,6 +58,7 @@ export function getProduct(element : any)
 
 
     })
+    console.log(response)
 
     const response_data = await response.json()
     

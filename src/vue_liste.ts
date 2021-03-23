@@ -35,6 +35,8 @@ content.classList.add("list-vue")
 
 
 function displayCameras(AllProducts : any) {
+
+    
     
     AllProducts.forEach((element : any) => {
 

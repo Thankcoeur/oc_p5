@@ -2,9 +2,28 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,500&display=swap');
 :root {
-    --main-color : rgb(124, 21, 107);
+    --main-color : rgb(41, 2, 73);
     color: rgb(88, 88, 88);
    
+}
+.body {
+margin-bottom: 40px;
+
+
+}
+
+.list-vue  {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+
+
+}
+@media (max-width : 900px) {
+
+    .list-vue {
+
+        grid-template-columns: 1fr;
+    }
 }
 
 
@@ -28,6 +47,8 @@
 
 
 .btn-voir-plus {
+    margin: auto;
+    text-align: center;
     cursor: pointer;
     width: 80px;
     border-radius: 20px;

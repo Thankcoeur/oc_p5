@@ -8,11 +8,13 @@ return function(target : any , descriptor : any) {
     let data : any  = null
     Object.defineProperty(target, descriptor, {
         get: function() { 
+
+            data = LocalStorage.recupererData();
+             return data
             
-             return LocalStorage.recupererData(); 
         },
         set: function(data_) {
-            console.log(data_)
+            
             LocalStorage.enregistrer(data_)
            data = data_
         },
@@ -51,9 +53,7 @@ constructor() {
  static recupererData() {
      let data =JSON.parse(window.localStorage.getItem("panier"))
 
-if(data === null) {
-    data = []
-}
+
 return data
 
 
