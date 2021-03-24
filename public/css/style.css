@@ -1,8 +1,5 @@
-
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,500&display=swap');
 :root {
-    --main-color : rgb(243, 77, 0);
+    --main-color :#8a2be2 ;
     color: rgb(88, 88, 88);
    
 }
@@ -10,6 +7,10 @@
 margin-bottom: 40px;
 
 
+}
+
+.texte-panier {
+    margin-left: 10px;
 }
 
 .list-vue  {
@@ -27,15 +28,26 @@ margin-bottom: 40px;
 }
 #ajouter__panier {
 
-    background-color: blueviolet;
+    background-color: #8a2be2;
     border: none;
     border-radius: 20px;
     color: white;
     padding: 10px;
 }
+#ajouter__panier:hover {
+
+   
+        filter: brightness(80%);
+    
+    
+  
+}
 
 
+.panier {
 
+    color : var(--main-color)
+}
 
 .product {
     padding: 40px;
@@ -72,7 +84,7 @@ margin-bottom: 40px;
     background-color: var(--main-color);
 }
 .btn-voir-plus:hover {
-    background-color: black ;
+    filter: brightness(80%);
 
 
 
